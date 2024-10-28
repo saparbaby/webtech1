@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dombra Store: Buy & Order</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container text-center">
+      <p id="currentDateTime" class="text-light mb-1"></p>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Dombra <strong>Store</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#catalog" class="nav-link">Catalog</a></li>
+            <li class="nav-item"><a href="#order" class="nav-link">Order</a></li>
+            <li class="nav-item"><a href="#reviews" class="nav-link">Reviews</a></li>
+            <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+        <button id="themeToggle" class="btn btn-secondary ml-3"><i class="fas fa-moon"></i></button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="offer-container">
+    <div class="offer-content">
+      <h2>Осенняя акция!!!</h2>
+      <p>-15% на Custom Dombra любой сложности. Успей воспользоваться предложением!</p>
+      <div class="timer">
+        <span id="countdown-timer"></span> <!-- Место для таймера -->
+      </div>
+      <button class="btn btn-warning btn-lg mt-3">Заказать сейчас</button>
+    </div>
+  </div>
+  
+
+  <main id="main-content">
+    <section id="about" class="section about-section bg-light py-5">
+      <div class="container text-center">
+        <h2 class="section-title">About the Dombra</h2>
+        <p class="section-description">The dombra is a traditional Kazakh instrument used for centuries in folk music, known for its distinctive sound and cultural significance. <a href="https://en.wikipedia.org/wiki/Dombra" target="_blank">Read more...</a></p>
+        <img src="https://sputnik.kz/img/912/79/9127999_0:63:1198:737_1920x0_80_0_0_96163ab3f3928a0436c7887c404c8d86.jpg" alt="Kazakh National Instrument - Dombra" class="img-fluid rounded mt-4">
+      </div>
+    </section>
+
+    <section id="catalog" class="section catalog-section py-5">
+      <div class="container">
+        <h2 class="section-title text-center">Catalog</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card catalog-item h-100">
+              <div class="card-body">
+                <h3 class="card-title">Standard Dombra</h3>
+                <p class="card-text">60,000 KZT</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card catalog-item h-100">
+              <div class="card-body">
+                <h3 class="card-title">Professional Dombra</h3>
+                <p class="card-text">100,000 KZT</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card catalog-item h-100">
+              <div class="card-body">
+                <h3 class="card-title">Custom Dombra</h3>
+                <p class="card-text">150,000 KZT</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section gallery-section bg-light py-5">
+      <div class="container">
+        <h2 class="section-title text-center">Gallery</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <img src="https://qazsound.kz/files/resized/products/capture3.700x800.png" alt="Dombra 1" class="img-fluid rounded shadow-sm draggable" draggable="true">
+          </div>
+          <div class="col-md-4 mb-4">
+            <img src="https://qazsound.kz/files/resized/products/capture4.700x800.png" alt="Dombra 2" class="img-fluid rounded shadow-sm draggable" draggable="true">
+          </div>
+          <div class="col-md-4 mb-4">
+            <img src="https://gazeta-kurier.kz/userfiles/item/1678/fullimage1.jpg" alt="Dombra 3" class="img-fluid rounded shadow-sm draggable" draggable="true">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="order" class="section order-section bg-light py-5">
+      <div class="container">
+        <h2 class="section-title text-center">Place an Order</h2>
+        <form id="orderForm" class="order-form mt-4">
+          <div class="form-group">
+            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required autocomplete="name">
+            <div class="invalid-feedback">Name is required.</div>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" class="form-control" placeholder="Email Address" required autocomplete="email">
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
+          <div class="form-group">
+            <select id="dombra-type" name="dombra-type" class="form-control">
+              <option value="standard">Standard Dombra</option>
+              <option value="professional">Professional Dombra</option>
+              <option value="custom">Custom Dombra</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea id="comments" name="comments" rows="4" class="form-control" placeholder="Additional Notes" autocomplete="off"></textarea>
+          </div>
+          <div class="form-group drag-and-drop-area">
+            <p>Drag and drop images from the gallery here:</p>
+            <div id="dropArea" class="drop-area"></div>
+          </div>
+          <div class="text-center">
+            <input type="submit" value="Place Order" class="btn btn-primary" id="placeOrderBtn">
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="reviews" class="section reviews-section py-5">
+      <div class="container text-center">
+        <h2 class="section-title">Reviews</h2>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <blockquote class="blockquote">
+                  <p class="mb-0">"The Dombra I ordered exceeded my expectations!"</p>
+                  <footer class="blockquote-footer">Aigerim N.</footer>
+                </blockquote>
+                <div class="rating">
+                  <span class="star" data-value="5">★</span>
+                  <span class="star" data-value="4">★</span>
+                  <span class="star" data-value="3">★</span>
+                  <span class="star" data-value="2">★</span>
+                  <span class="star" data-value="1">★</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <blockquote class="blockquote">
+                  <p class="mb-0">"Great sound quality and fast delivery."</p>
+                  <footer class="blockquote-footer">Nurlan B.</footer>
+                </blockquote>
+                <div class="rating">
+                  <span class="star" data-value="5">★</span>
+                  <span class="star" data-value="4">★</span>
+                  <span class="star" data-value="3">★</span>
+                  <span class="star" data-value="2">★</span>
+                  <span class="star" data-value="1">★</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="rate-us-section text-center py-5">
+      <button id="rateUsBtn" class="btn btn-primary">Rate Us</button>
+      <div id="rateModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Rate Our Service</h2>
+          <div class="rating">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+          </div>
+          <button id="submitRating" class="btn btn-secondary mt-3">Submit Rating</button>
+        </div>
+      </div>      
+    </section>
+    
+    
+    <section id="faq" class="section faq-section py-5">
+      <div class="container">
+        <h2 class="section-title text-center">FAQ</h2>
+        <div class="accordion" id="faqAccordion">
+          <div class="card">
+            <div class="card-header" id="faq1">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                  How long does it take to receive my Dombra?
+                </button>
+              </h2>
+            </div>
+            <div id="collapse1" class="collapse" aria-labelledby="faq1" data-parent="#faqAccordion">
+              <div class="card-body">
+                Delivery usually takes about 2 weeks.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="faq2">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                  Do you offer international shipping?
+                </button>
+              </h2>
+            </div>
+            <div id="collapse2" class="collapse" aria-labelledby="faq2" data-parent="#faqAccordion">
+              <div class="card-body">
+                Yes, we ship worldwide. Fees may apply.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container text-center">
+      <button id="changeColorBtn" class="btn btn-secondary mt-3">Change Background Color</button>
+      <button id="subscribeBtn" class="btn btn-primary ml-2">Subscribe</button>
+    </div>
+
+    <div id="popupForm" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Subscribe to our newsletter</h2>
+        <form>
+          <div class="form-group">
+            <input type="email" id="popupEmail" name="popupEmail" class="form-control" placeholder="Enter your email" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="successModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Thank you for your order!</h2>
+        <p>Your order has been successfully placed. We will contact you soon.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer bg-dark text-white py-4">
+    <div class="container text-center">
+      <p>Contact: <a href="mailto:sss@dombra.kz" class="footer-link text-light">sss@dombra.kz</a> | 📞 <a href="tel:+7xxxxxxxxx" class="footer-link text-light">+7 xxxxxxxxx</a></p>
+      <p>All rights reserved © 2024</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
